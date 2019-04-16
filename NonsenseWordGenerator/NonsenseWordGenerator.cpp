@@ -9,13 +9,11 @@ int main() {
 	std::cout << "Enter the amount of characters you would like your nonsense word to have: \n";
 
 	int charLength;
-
 	std::cin >> charLength;
 
-	std::cout << "Would you like your nonsense word to contain numbers? (1(yes) / 0(no)) \n";
+	std::cout << "Would you like your nonsense word to contain numbers? (\'1\' = yes / \'0\' = no) \n";
 
 	bool useNumbers;
-
 	std::cin >> useNumbers;
 
 	int arrayLen = useNumbers ? 36 : 26;
