@@ -1,21 +1,33 @@
-// NonsenseWordGenerator.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include "pch.h"
+
 #include <iostream>
+#include <string>
 
-int main()
-{
-    std::cout << "Hello World!\n"; 
+char chars[] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+
+int main() {
+	std::cout << "Enter the amount of characters you would like your nonsense word to have: \n";
+
+	int charLength;
+
+	std::cin >> charLength;
+
+	std::cout << "Would you like your nonsense word to contain numbers? (1(yes) / 0(no)) \n";
+
+	bool useNumbers;
+
+	std::cin >> useNumbers;
+
+	int arrayLen = useNumbers ? 36 : 26;
+
+	std::string nonsenseWord = "";
+
+	for (int i = 0; i < charLength; i++) {
+		char c = chars[rand() % arrayLen];
+		nonsenseWord += c;
+	}
+
+	std::cout << "Your nonsense word is: " << nonsenseWord << "\n";
+	system("PAUSE");
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
